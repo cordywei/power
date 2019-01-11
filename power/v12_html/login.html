@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>登录页</title>
+    <link rel="stylesheet" href="http://unpkg.com/iview/dist/styles/iview.css">
+    <link rel="stylesheet" href="../v12_css/login.css">
+</head>
+
+<body>
+    <div id="login">
+        <div class="layout">
+            <Layout>
+                <Header>
+                    <img src="../v12_images/logo.png" alt="" class="login_img">
+                </Header>
+                <Content class="clearfix">
+                    <div class="login_image_left inline_block">
+                        <img src="../v12_images/login_left.png" alt="">
+                    </div>
+                    <div class="login_form inline_block">
+                        <i-Form ref="loginValidate" :model="loginValidate" :rules="ruleValidate" show-message>
+                            <form-item prop="id">
+                                <i-input placeholder="请输入账号" prefix="ios-phone-portrait" v-model="loginValidate.id"/>
+                            </form-item>
+                            <form-item prop="password">
+                                <i-input placeholder="请输入密码" prefix="ios-lock-outline" v-model="loginValidate.password"/>
+                            </form-item>
+                            <form-item prop="verifyNum">
+                                <i-input placeholder="请输入验证码" prefix="ios-appstore-outline" v-model="loginValidate.verifyNum"/>
+                            </form-item>
+                            <form-item class="clearfix">
+                                <Checkbox label="Eat" v-modal="" class="fl">记住密码</Checkbox>
+                                <span class="forget_code fr">忘记密码</span>
+                            </form-item>
+                            <form-item>
+                                <i-Button type="primary" long @click="canLogin('loginValidate')">登录</i-Button>
+                            </form-item>
+                        </i-Form>
+                    </div>
+                </Content>
+                <Footer class="layout_footer_center">
+                    <img src="../v12_images/footer_logo.png" alt="" class="login_foot_img">
+                </Footer>
+            </Layout>
+        </div>
+    </div>
+
+    <script src="https://vuejs.org/js/vue.min.js"></script>
+    <script src="https://unpkg.com/iview/dist/iview.min.js"></script>
+    <script src="../v12_js/login.js"></script>
+
+</body>
+
+</html>
