@@ -54,6 +54,7 @@ content {
     float: right;  
     margin-top: 30px;
     width: 342px;
+    position: relative;
 }
 .clearfix:after{content:""; display:block; clear:both;}
 .ivu-form-item-content input {
@@ -68,8 +69,16 @@ content {
 .forget_code:hover {
     color:#808695
 }
-
-
+.verify_img {
+    width:80px;
+    height:30px;
+    position: absolute;
+    right: 0;
+    bottom: 137px;
+}
+.verify_img > img {
+    width:100%;
+}
 
 
 
