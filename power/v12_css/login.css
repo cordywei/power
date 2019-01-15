@@ -62,6 +62,10 @@ content {
     border-bottom: 1px solid #e5e5e5;
     border-radius: 0;
 }
+.code_bar {
+	height:18px;
+	margin-bottom:24px;
+}
 .forget_code {
     cursor: pointer;
     color:#2d8cf0;
@@ -74,7 +78,7 @@ content {
     height:30px;
     position: absolute;
     right: 0;
-    bottom: 137px;
+    bottom: 124px;
 }
 .verify_img > img {
     width:100%;

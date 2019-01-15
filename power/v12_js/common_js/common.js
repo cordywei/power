@@ -1104,9 +1104,9 @@ function getRootPath() {
 function getDomainName() {
     return ENV_localDevelop ? DevelopPath : (window.document.location.origin + "/");
 }
-$("body").click(function () {
-    $(".main-account-right", parent.document).removeClass("open");
-});
+// $("body").click(function () {
+//     $(".main-account-right", parent.document).removeClass("open");
+// });
 /**
  * @description 获取cookie
  * @param name 
