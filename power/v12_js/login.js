@@ -66,16 +66,14 @@ new Vue({
 				that.verifyImg = that.getRootPath() + "captcha?timestamp=" + (new Date()).valueOf();
 			}
 		}, 1000);
-						
-		
+								
 		let cookieName = this.getCookie("name");
 		let cookiePassword = this.getCookie("password");
-		if(cookieName){
+		if(cookieName && cookiePassword){
 			this.loginValidate.name = cookieName;
-		};		
-		if(cookiePassword){
 			this.loginValidate.password = cookiePassword;
-		};
+			this.remember = true;
+		};	
 		
 		console.log(this.getCookie("name"))
 		console.log(this.getCookie("password"))
@@ -144,6 +142,9 @@ new Vue({
 					this.setCookie("name",this.loginValidate.name,7);
 					this.setCookie("password",this.loginValidate.password,7);
 				}
+			}else{
+				this.setCookie("name","",-1);
+				this.setCookie("password","",-1);
 			}
 		},
 		// 设置cookie
@@ -157,15 +158,14 @@ new Vue({
 		},
 		// 获取cookie
 		getCookie: function(cname) {
-			let name = cname + "=";
-			let ca = document.cookie.split(";");
+			let ca = document.cookie.split("; ");
+			console.log(ca)
 			let _value = "";
 			for(var i = 0; i < ca.length; i++) {
-				let c = ca[i].split("=");				
-				if(c.indexOf(name) != -1) {
-					_value = c.substring(name.length, c.length);
-					break;
-				}
+				let c = ca[i].split("=");					
+				if(c.indexOf(cname) != -1) {
+					_value = c[1];
+				};
 			};
 			return _value;
 		},
